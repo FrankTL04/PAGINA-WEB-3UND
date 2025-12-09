@@ -19,9 +19,7 @@ format:
     <h1>FENOTIPADO DE HOJAS DE NÍSPERO <em>(Eriobotrya japonica)</em> CON SOFTWARE AUTOMATIZADO</h1>
 
     <p><strong>Autores:</strong><br>
-    Colunche Vasquez, Josue J.; Cubas Fernandez, Mikey D.; Delgado Gomez, Mark A.;<br>
-    Ramos Briceños, Iván; Sánchez Alvarado, Rubén; Tomapasca López, Frank
-    </p>
+    Colunche Vasquez, Josue J.; Cubas Fernandez, Mikey D.; Delgado Gomez, Mark A;Ramos Briceños, Iván; Sánchez Alvarado, Rubén; Tomapasca López, Frank</p>
   </div>
 
   <div style="width:30%; position:relative;">
