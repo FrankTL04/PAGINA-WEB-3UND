@@ -232,6 +232,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#captura-de-imágenes" id="toc-captura-de-imágenes" class="nav-link" data-scroll-target="#captura-de-imágenes">Captura de imágenes</a></li>
   <li><a href="#procesamiento-en-google-colab" id="toc-procesamiento-en-google-colab" class="nav-link" data-scroll-target="#procesamiento-en-google-colab">Procesamiento en Google Colab</a></li>
   </ul></li>
+  <li><a href="#conclusiones" id="toc-conclusiones" class="nav-link" data-scroll-target="#conclusiones">Conclusiones</a></li>
+  <li><a href="#recomendaciones" id="toc-recomendaciones" class="nav-link" data-scroll-target="#recomendaciones">Recomendaciones</a></li>
+  <li><a href="#referencias-bibliográficas" id="toc-referencias-bibliográficas" class="nav-link" data-scroll-target="#referencias-bibliográficas">Referencias Bibliográficas</a></li>
   </ul>
 </nav>
 </div>
@@ -246,10 +249,12 @@ ul.task-list li input[type="checkbox"] {
 <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-top:20px;">
 
   <div style="width:70%;">
-    <h1>FENOTIPADO DE HOJAS DE NÍSPERO <em>(Eriobotrya japonica)</em> MEDIANTE SOFTWARE AUTOMATIZADO EMPLEANDO IA</h1>
+    <h1>FENOTIPADO DE HOJAS DE NÍSPERO <em>(Eriobotrya japonica)</em> CON SOFTWARE AUTOMATIZADO</h1>
 
     <p><strong>Autores:</strong><br>
-    Colunche Vasquez, Josue J.; Cubas Fernandez, Mikey D.; Delgado Gomez, Mark A;Ramos Briceños, Iván; Sánchez Alvarado, Rubén; Tomapasca López, Frank</p>
+    Colunche Vasquez, Josue J.; Cubas Fernandez, Mikey D.; Delgado Gomez, Mark A.;
+    Ramos Briceños, Iván; Sánchez Alvarado, Rubén; Tomapasca López, Frank
+    </p>
   </div>
 
   <div style="width:30%; position:relative;">
@@ -264,6 +269,11 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="resumen" class="level2">
 <h2 class="anchored" data-anchor-id="resumen">Resumen</h2>
+<p>El este trabajo se realizó un proceso automatizado de fenotipado de hojas de níspero (<em>Eriobotrya japonica</em>) mediante herramientas de análisis de imágenes implementadas mendiante el uso de Google Colab, con el objetivo de obtener mediciones morfológicas de longitud, ancho y área.</p>
+<p>Se capturaron imágenes estandarizadas utilizando una moneda de un sol como escala de referencia, lo que permitió convertir medidas en píxeles a unidades reales. A través de Python y librerías como OpenCV, se implementó un flujo automatizado que incluye carga de imágenes, detección de escala, segmentación, cálculo de área, longitud y ancho, y exportación de resultados a una hoja de cálculo.</p>
+<p>El método automatizado demostró ventajas frente a los procedimientos manuales, destacando su rapidez y capacidad para procesar múltiples muestras simultáneamente; este enfoque facilita la caracterización morfológica de hojas, la cuál es útil para estudios de variabilidad, selección de genotipos y evaluación de respuestas fisiológicas.</p>
+<p>El trabajo evidencia que Google Colab, por su accesibilidad y capacidad de procesamiento en la nube, resulta una herramienta efectiva para aplicar inteligencia artificial en análisis agronómicos sin requerir equipos especializados.</p>
+<p>Como conclusión esta metodología representa una alternativa confiable y eficiente para estudios de fenotipado vegetal, siempre que se cumpla con una buena calidad de imágenes y la correcta ubicación de la escala de referencia.</p>
 </section>
 <section id="introducción" class="level2">
 <h2 class="anchored" data-anchor-id="introducción">Introducción</h2>
@@ -348,7 +358,12 @@ ul.task-list li input[type="checkbox"] {
 <div id="fig-imaje12" class="center quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-imaje12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/IMAJE_12.png" class="img-fluid figure-img" style="width:55.0%">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/IMAJE_12.png" class="img-fluid figure-img" style="width:55.0%"></p>
+<figcaption>Hoja analizada</figcaption>
+</figure>
+</div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-imaje12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1
@@ -357,98 +372,59 @@ Figure&nbsp;1
 </div>
 </section>
 <section id="procesamiento-en-google-colab" class="level3">
-<h3 class="anchored">Procesamiento en Google Colab</h3>
-<p>Para poder fenotipar las imágenes en Google Colab, se empleo un código basado en Phyton.</p>
+<h3 class="anchored" data-anchor-id="procesamiento-en-google-colab">Procesamiento en Google Colab</h3>
+<p>Para poder fenotipar las imágenes en Google Colab, se empleó un código basado en Python.</p>
 <section id="carga-de-imágenes" class="level4">
 <h4 class="anchored" data-anchor-id="carga-de-imágenes">Carga de imágenes</h4>
-<p>Google Colaab, permite la carga de varias imágenes a la misma vez, lo que facilita el trabajo del usuario.</p>
+<p>Google Colab permite la carga de varias imágenes a la misma vez, lo que facilita el trabajo del usuario.</p>
 </section>
 <section id="detección-de-escala" class="level4">
 <h4 class="anchored" data-anchor-id="detección-de-escala">Detección de escala</h4>
-<p>Gogle Colab identifica el objeto circular y calcula el número de píxeles que ocupa y lo compara con la medida proporcionada (25.5 mm)</p>
+<p>Google Colab identifica el objeto circular y calcula el número de píxeles que ocupa y lo compara con la medida proporcionada (25.5 mm).</p>
 </section>
 <section id="extracción-de-rasgos-morfológicos" class="level4">
-<h4 class="anchored">Extracción de rasgos morfológicos</h4>
-<p>Google colab identifica el ancho y el largo del objeto a trabajar:</p>
-<div id="fig-imaje12" class="center quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-imaje12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/WhatsApp%20Image%202025-12-09%20at%2011.14.43%20AM%20(2).jpeg" class="img-fluid figure-img" style="width:75.0%"></p>
-<figcaption>Figura : Identificación del objeto</figcaption>
-</figure>
+<h4 class="anchored" data-anchor-id="extracción-de-rasgos-morfológicos">Extracción de rasgos morfológicos</h4>
+<p>Google Colab identifica el ancho y el largo del objeto a trabajar:</p>
+<div style="text-align:center;">
+<p><img src="images/WhatsApp Image 2025-12-09 at 11.14.43 AM (2).jpeg" width="75%"></p>
 </div>
-<section id="exportación-de-resultados" class="level4" style="text-align:justify;">
-<h4 class="anchored">Exportación de resultados</h4>
-<p>Una vez obtenido las medidas, se genera una vista previa de las imágenes y sus respectvas medidas.</p>
-<div id="fig-imaje12" class="center quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-subfloat-fig figure">
-<div aria-describedby="fig-imaje12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/WhatsApp%20Image%202025-12-09%20at%2011.14.42%20AM.jpeg" class="img-fluid figure-img" style="width:75.0%" data-ref-parent="fig-imaje12"></p>
-<figcaption>Hoja analizada</figcaption>
-</figure>
+</section>
+<section id="exportación-de-resultados" class="level4">
+<h4 class="anchored" data-anchor-id="exportación-de-resultados">Exportación de resultados</h4>
+<p>Una vez obtenidas las medidas, se genera una vista previa de las imágenes y sus respectivas mediciones.</p>
+<div style="text-align:center;">
+<p><img src="images/WhatsApp Image 2025-12-09 at 11.14.42 AM.jpeg" width="75%"></p>
 </div>
-<div style="text-align:justify;">
-<p>Google Colab, genera una tabla con las unidades de medidas obtenidas, las cuales se exportaran automaticamente a un archivo excel.</p>
-<div id="fig-imaje12" class="center quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-subfloat-fig figure">
-<div aria-describedby="fig-imaje12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/WhatsApp%20Image%202025-12-09%20at%2011.14.42%20AM%20(1).jpeg" class="img-fluid figure-img" style="width:55.0%" data-ref-parent="fig-imaje12"></p>
-<figcaption>Hoja analizada</figcaption>
-</figure>
+<p>Google Colab genera una tabla con las unidades de medida obtenidas, las cuales se exportarán automáticamente a un archivo Excel.</p>
+<div style="text-align:center;">
+<p><img src="images/WhatsApp Image 2025-12-09 at 11.14.42 AM (1).jpeg" width="55%"></p>
 </div>
-<div style="text-align:justify;">
-<p>Hoja de cálculo generada en formato excel; conteniendo las medidas obtenidas.</p>
-<div id="fig-imaje12" class="center quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-subfloat-fig figure">
-<div aria-describedby="fig-imaje12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/WhatsApp%20Image%202025-12-09%20at%2010.44.48%20AM.jpeg" class="img-fluid figure-img" style="width:55.0%" data-ref-parent="fig-imaje12">
+<p>Hoja de cálculo generada en formato Excel, conteniendo las medidas obtenidas.</p>
+<div style="text-align:center;">
+<img src="images/WhatsApp Image 2025-12-09 at 10.44.48 AM.jpeg" width="55%">
+<p>
+<em>Tabla de resultados.</em>
+</p>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-imaje12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(a)
-</figcaption>
-</figure>
-</div>
-<div style="text-align:justify;">
+</section>
+</section>
+</section>
 <section id="conclusiones" class="level2">
 <h2 class="anchored" data-anchor-id="conclusiones">Conclusiones</h2>
+<p>El uso de Google Colab y técnicas de inteligencia artificial basadas en visión por computadora meidante lenguaje Phyton, permitió automatizar de manera eficiente la medición de ancho, longitud y área de las hojas a partir de imágenes. La calibración de la escala mediante una moneda de diámetro conocido aseguró precisión en la escala de milímetros por píxel, reduciendo errores y estandarizando el proceso de análisis.</p>
+<p>La automatización desarrollada no solo agilizó el procesamiento de múltiples imágenes a la vez, sino que también generó resultados reproducibles y exportables para análisis posteriores; este enfoque demuestra que las herramientas modernas de IA y procesamiento de imágenes ofrecen soluciones accesibles,rápidas y precisas para estudios agronómicos, mejorando la calidad y rapidez del trabajo.</p>
 </section>
 <section id="recomendaciones" class="level2">
 <h2 class="anchored" data-anchor-id="recomendaciones">Recomendaciones</h2>
-<p>Para evitar complicaciones al realizar el fenotipado de imágenes mediante inteligencia artificial utilizando Google Colab, es fundamental asegurarse de que las imágenes estén bien definidas y con buena resolución. Además, es importante que la escala de referencia (por ejemplo, una regla o moneda) se encuentre siempre en el mismo plano de trabajo que el objeto a analizar, para garantizar mediciones precisas y consistentes. También se recomienda mantener un formato de imagen uniforme y libre de distorsiones que puedan afectar el análisis automatizado.</p>
+<p>Para evitar complicaciones al realizar el fenotipado de imágenes mediante inteligencia artificial utilizando Google Colab, es fundamental asegurarse de que las imágenes estén bien definidas y con buena resolución. Además, es importante que la escala de referencia se encuentre siempre en el mismo plano de trabajo que el objeto a analizar, para garantizar mediciones precisas y consistentes.</p>
 </section>
 <section id="referencias-bibliográficas" class="level2">
 <h2 class="anchored" data-anchor-id="referencias-bibliográficas">Referencias Bibliográficas</h2>
-</section>
-</div>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-imaje12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(b)
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-imaje12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(c)
-</figcaption>
-</figure>
-</div>
-</section>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-imaje12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2
-</figcaption>
-</figure>
-</div>
-</section>
-</section>
+<ul>
+<li>Acosta, Belén. (2024). Partes de una hoja y sus funciones—Resumen con esquemas. ecologiaverde.com. https://www.ecologiaverde.com/partes-de-una-hoja-y-sus-funciones-2776.html</li>
+<li>Marta. (2023). Uso de inteligencia artificial para identificar fenotipos—Geneticahoy.com. genteticahoy. https://geneticahoy.com/uso-de-inteligencia-artificial-para-identificar-fenotipos/</li>
+<li>Vieira, D. (2024). Google Colab: ¿Qué es y cómo usarlo? https://www.hostgator.pe/blog/google-colab/</li>
+</ul>
 </section>
 
 </main>

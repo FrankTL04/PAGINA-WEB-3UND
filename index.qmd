@@ -1,7 +1,6 @@
 ---
 title-block: false
 title-block-style: none
-
 format:
   html:
     toc: true
@@ -10,16 +9,25 @@ format:
       light: cosmo
       dark: cyborg
     toggle: true
+include-in-header: |
+  <style>
+    /* Justificación APA global */
+    body, p, li, .quarto-article p, .quarto-article li, .page-content p {
+      text-align: justify !important;
+      text-justify: inter-word !important;
+    }
+  </style>
 ---
-
 ```{=html}
 <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-top:20px;">
 
   <div style="width:70%;">
-    <h1>FENOTIPADO DE HOJAS DE NÍSPERO <em>(Eriobotrya japonica)</em> MEDIANTE SOFTWARE AUTOMATIZADO EMPLEANDO IA</h1>
+    <h1>FENOTIPADO DE HOJAS DE NÍSPERO <em>(Eriobotrya japonica)</em> CON SOFTWARE AUTOMATIZADO</h1>
 
     <p><strong>Autores:</strong><br>
-    Colunche Vasquez, Josue J.; Cubas Fernandez, Mikey D.; Delgado Gomez, Mark A;Ramos Briceños, Iván; Sánchez Alvarado, Rubén; Tomapasca López, Frank</p>
+    Colunche Vasquez, Josue J.; Cubas Fernandez, Mikey D.; Delgado Gomez, Mark A.;
+    Ramos Briceños, Iván; Sánchez Alvarado, Rubén; Tomapasca López, Frank
+    </p>
   </div>
 
   <div style="width:30%; position:relative;">
@@ -38,11 +46,17 @@ format:
 
 
 
-
-
-
 ## Resumen
 
+El este trabajo se realizó un proceso automatizado de fenotipado de hojas de níspero (*Eriobotrya japonica*) mediante herramientas de análisis de imágenes implementadas mendiante el uso de Google Colab, con el objetivo de obtener mediciones morfológicas de longitud, ancho y área.
+
+Se capturaron imágenes estandarizadas utilizando una moneda de un sol como escala de referencia, lo que permitió convertir medidas en píxeles a unidades reales. A través de Python y librerías como OpenCV, se implementó un flujo automatizado que incluye carga de imágenes, detección de escala, segmentación, cálculo de área, longitud y ancho, y exportación de resultados a una hoja de cálculo.
+
+El método automatizado demostró ventajas frente a los procedimientos manuales, destacando su rapidez y capacidad para procesar múltiples muestras simultáneamente; este enfoque facilita la caracterización morfológica de hojas, la cuál es útil para estudios de variabilidad, selección de genotipos y evaluación de respuestas fisiológicas.
+
+El trabajo evidencia que Google Colab, por su accesibilidad y capacidad de procesamiento en la nube, resulta una herramienta efectiva para aplicar inteligencia artificial en análisis agronómicos sin requerir equipos especializados.
+
+Como conclusión esta metodología representa una alternativa confiable y eficiente para estudios de fenotipado vegetal, siempre que se cumpla con una buena calidad de imágenes y la correcta ubicación de la escala de referencia.
 
 
 ## Introducción
@@ -128,69 +142,69 @@ Las hojas fueron fotografiadas en un fondo blanco, incluyendo una moneda como es
 
 ::: {#fig-imaje12 .center}
 ![Hoja analizada](images/IMAJE_12.png){width="55%"}
-Figura 1. Imagen analizada.
+
 :::
 
 
 
 
 ### Procesamiento en Google Colab
-Para poder fenotipar las imágenes en Google Colab, se empleo un código basado en Phyton.
 
+Para poder fenotipar las imágenes en Google Colab, se empleó un código basado en Python.
 
+#### Carga de imágenes
 
+Google Colab permite la carga de varias imágenes a la misma vez, lo que facilita el trabajo del usuario.
 
+#### Detección de escala
 
+Google Colab identifica el objeto circular y calcula el número de píxeles que ocupa y lo compara con la medida proporcionada (25.5 mm).
 
-#### Carga de imágenes  
-Google Colaab, permite la carga de varias imágenes a la misma vez, lo que facilita el trabajo del usuario.
+#### Extracción de rasgos morfológicos
 
+Google Colab identifica el ancho y el largo del objeto a trabajar:
 
-#### Detección de escala  
-Gogle Colab identifica el objeto circular y calcula el número de píxeles que ocupa y lo compara con la medida proporcionada (25.5 mm)
+<div style="text-align:center;">
+  <img src="images/WhatsApp Image 2025-12-09 at 11.14.43 AM (2).jpeg" width="75%">
+</div>
 
-
-
-#### Extracción de rasgos morfológicos  
-Google colab identifica el ancho y el largo del objeto a trabajar:
-
-::: {#fig-imaje12 .center}
-![Figura : Identificación del objeto](images/WhatsApp Image 2025-12-09 at 11.14.43 AM (2).jpeg){width="75%"}
-
-<div style="text-align:justify;">
 #### Exportación de resultados
-Una vez obtenido las medidas, se genera una vista previa de las imágenes y sus respectvas medidas.
 
-::: {#fig-imaje12 .center}
-![Hoja analizada](images/WhatsApp Image 2025-12-09 at 11.14.42 AM.jpeg){width="75%"}
-<div style="text-align:justify;">
-
-Google Colab, genera una tabla con las unidades de medidas obtenidas, las cuales se exportaran automaticamente a un archivo excel. 
-
-::: {#fig-imaje12 .center}
-![Hoja analizada](images/WhatsApp Image 2025-12-09 at 11.14.42 AM (1).jpeg){width="55%"}
+Una vez obtenidas las medidas, se genera una vista previa de las imágenes y sus respectivas mediciones.
 
 
-<div style="text-align:justify;">
+<div style="text-align:center;">
+  <img src="images/WhatsApp Image 2025-12-09 at 11.14.42 AM.jpeg" width="75%">
+</div>
 
-Hoja de cálculo generada en formato excel; conteniendo las medidas obtenidas.
+Google Colab genera una tabla con las unidades de medida obtenidas, las cuales se exportarán automáticamente a un archivo Excel.
 
-::: {#fig-imaje12 .center}
-![Hoja analizada](images/WhatsApp Image 2025-12-09 at 10.44.48 AM.jpeg){width="55%"}
-Figura 1. Tabla de resultados.
-:::
+<div style="text-align:center;">
+  <img src="images/WhatsApp Image 2025-12-09 at 11.14.42 AM (1).jpeg" width="55%">
+</div>
 
-<div style="text-align:justify;">
+Hoja de cálculo generada en formato Excel, conteniendo las medidas obtenidas.
+
+<div style="text-align:center;">
+  <img src="images/WhatsApp Image 2025-12-09 at 10.44.48 AM.jpeg" width="55%">
+  <p><em>Tabla de resultados.</em></p>
+</div>
 
 ## Conclusiones
 
+El uso de Google Colab y técnicas de inteligencia artificial basadas en visión por computadora meidante lenguaje Phyton, permitió automatizar de manera eficiente la medición de ancho, longitud  y área de las hojas a partir de imágenes. La calibración de la escala mediante una moneda de diámetro conocido aseguró precisión en la escala de milímetros por píxel, reduciendo errores y estandarizando el proceso de análisis.
+
+La automatización desarrollada no solo agilizó el procesamiento de múltiples imágenes a la vez, sino que también generó resultados reproducibles y exportables para análisis posteriores; este enfoque demuestra que las herramientas modernas de IA y procesamiento de imágenes ofrecen soluciones accesibles,rápidas y precisas para estudios agronómicos, mejorando la calidad y rapidez del trabajo.
 
 ## Recomendaciones
-Para evitar complicaciones al realizar el fenotipado de imágenes mediante inteligencia artificial utilizando Google Colab, es fundamental asegurarse de que las imágenes estén bien definidas y con buena resolución. Además, es importante que la escala de referencia (por ejemplo, una regla o moneda) se encuentre siempre en el mismo plano de trabajo que el objeto a analizar, para garantizar mediciones precisas y consistentes. También se recomienda mantener un formato de imagen uniforme y libre de distorsiones que puedan afectar el análisis automatizado.
+
+Para evitar complicaciones al realizar el fenotipado de imágenes mediante inteligencia artificial utilizando Google Colab, es fundamental asegurarse de que las imágenes estén bien definidas y con buena resolución. Además, es importante que la escala de referencia se encuentre siempre en el mismo plano de trabajo que el objeto a analizar, para garantizar mediciones precisas y consistentes.
 
 ## Referencias Bibliográficas
 
-
+- Acosta,  Belén. (2024). Partes de una hoja y sus funciones—Resumen con esquemas. ecologiaverde.com. https://www.ecologiaverde.com/partes-de-una-hoja-y-sus-funciones-2776.html
+- Marta. (2023). Uso de inteligencia artificial para identificar fenotipos—Geneticahoy.com. genteticahoy. https://geneticahoy.com/uso-de-inteligencia-artificial-para-identificar-fenotipos/
+- Vieira, D. (2024). Google Colab: ¿Qué es y cómo usarlo? https://www.hostgator.pe/blog/google-colab/
 
 
 
