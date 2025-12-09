@@ -1,0 +1,170 @@
+---
+title-block: false
+title-block-style: none
+
+format:
+  html:
+    toc: true
+    toc-location: left
+    theme:
+      light: cosmo
+      dark: cyborg
+    toggle: true
+---
+
+```{=html}
+<div style="display:flex; justify-content:space-between; align-items:flex-start; margin-top:20px;">
+
+  <div style="width:70%;">
+    <h1>FENOTIPADO DE HOJAS DE NÍSPERO <em>(Eriobotrya japonica)</em> CON SOFTWARE AUTOMATIZADO</h1>
+
+    <p><strong>Autores:</strong><br>
+    Colunche Vasquez, Josue J.; Cubas Fernandez, Mikey D.; Delgado Gomez, Mark A.;<br>
+    Ramos Briceños, Iván; Sánchez Alvarado, Rubén; Tomapasca López, Frank
+    </p>
+  </div>
+
+  <div style="width:30%; position:relative;">
+
+    <div style="position:absolute; top:0; right:0; z-index:10;">
+      <quarto-toggle-theme></quarto-toggle-theme>
+    </div>
+
+    <img src="images/20.png" style="width:100%; border-radius:12px; margin-top:45px;">
+  </div>
+
+</div>
+```
+
+
+
+
+
+
+
+
+## Resumen
+
+
+
+## Introducción
+
+El fenotipado vegetal constituye una herramienta fundamental para comprender la variabilidad morfológica y funcional de las plantas, permitiendo relacionar sus características externas con procesos fisiológicos, genéticos y ambientales. En los últimos años, el desarrollo de herramientas digitales y técnicas de análisis de imágenes ha facilitado la evaluación precisa, rápida y reproducible de rasgos fenotípicos, superando las limitaciones de los métodos manuales tradicionales.
+
+El níspero (*Eriobotrya japonica*) es una especie frutal de importancia creciente debido a su valor nutricional, sus propiedades nutracéuticas y su adaptación a diversos entornos agrícolas. El estudio detallado de la morfología de sus hojas aporta información clave para la selección de genotipos, el monitoreo del estado fisiológico y la identificación de respuestas al manejo agronómico o a factores ambientales.
+
+En este trabajo se desarrolla un proceso de fenotipado automatizado de hojas de níspero, empleando técnicas de análisis de imágenes a partir de fotografías estandarizadas. Para la automatización y procesamiento computacional se utilizó Google Colab, lo que permitió integrar librerías de visión computacional, segmentación y medición morfológica dentro de un entorno reproducible y accesible.
+
+Esta metodología facilita la medición de características como área foliar, perímetro, longitud, ancho y otros rasgos cuantitativos, contribuyendo a estudios de fenotipado de bajo costo y alta eficiencia. La implementación de software automatizado en el fenotipado vegetal representa un avance significativo hacia prácticas más precisas, objetivas y escalables, especialmente en cultivos de interés agronómico como el níspero. Este enfoque abre oportunidades para mejorar la caracterización morfológica y apoyar investigaciones orientadas a la productividad, adaptación y selección varietal.
+
+
+
+## Objetivos
+
+### Objetivo general
+
+Realizar el fenotipado automatizado de hojas de níspero (*Eriobotrya japonica*) mediante herramientas de análisis de imágenes en Google Colab, con el fin de obtener mediciones morfológicas precisas y reproducibles.
+
+### Objetivos específicos
+
+1. Capturar y estandarizar imágenes de hojas de níspero empleando una escala de referencia para el cálculo de medidas reales.  
+2. Implementar un flujo de procesamiento digital utilizando Google Colab y librerías de visión computacional.  
+3. Segmentar las hojas y extraer características morfológicas clave como área, perímetro, longitud y ancho.  
+4. Evaluar la precisión y eficiencia del método automatizado frente a mediciones manuales o tradicionales.  
+5. Generar un conjunto de datos morfométricos que pueda emplearse en estudios posteriores de variabilidad, selección o caracterización agronómica.
+
+
+
+## Marco Teórico
+
+### Fenotipado Vegetal
+
+El fenotipado vegetal es el conjunto de técnicas empleadas para cuantificar y analizar las características observables de las plantas, incluyendo rasgos morfológicos, fisiológicos y bioquímicos. Estas características resultan de la interacción entre la expresión genética y las condiciones ambientales.
+
+Tradicionalmente, el fenotipado se ha realizado mediante mediciones manuales, las cuales son laboriosas, lentas y sujetas a errores asociados al observador. Como respuesta a estas limitaciones, se han desarrollado métodos de fenotipado automatizado que utilizan tecnologías de visión por computadora y análisis de imágenes para obtener mediciones precisas y reproducibles.
+
+
+
+### Fenotipado automatizado mediante análisis de imágenes
+
+El análisis de imágenes se ha convertido en una herramienta poderosa para el fenotipado de plantas debido a su capacidad para capturar y procesar grandes cantidades de información de forma rápida y objetiva. Mediante la aplicación de algoritmos de segmentación, detección de contornos y cálculo geométrico, es posible extraer rasgos morfológicos como área foliar, perímetro, longitud, forma y patrones de venación.
+
+El fenotipado automatizado presenta varias ventajas:
+
+1. Reduce el tiempo y esfuerzo manual.  
+2. Minimiza la subjetividad del evaluador.  
+3. Permite analizar grandes conjuntos de datos.  
+4. Facilita la creación de metodologías reproducibles.
+
+Herramientas como Python, OpenCV y plataformas como Google Colab han hecho accesible este tipo de análisis incluso para usuarios sin hardware especializado.
+
+
+
+### Importancia de las hojas como órgano de estudio
+
+Las hojas constituyen el principal sitio de fotosíntesis, intercambio gaseoso y regulación hídrica. La morfología foliar —como área, forma, margen y arquitectura de nervaduras— está estrechamente relacionada con procesos fisiológicos y con la adaptación de las plantas a condiciones ambientales específicas.
+
+El estudio foliar permite inferir:
+
+1. La eficiencia fotosintética  
+2. El estado hídrico  
+3. Respuestas a estrés biótico y abiótico  
+4. Características genéticas asociadas a productividad  
+5. Variación intra e intervarietal  
+
+
+
+## Metodología
+
+### Material vegetal
+
+Se recolectaron hojas de níspero (*Eriobotrya japonica*) provenientes de plantas sanas y en estado fisiológico comparable. Las muestras se seleccionaron asegurando variabilidad en tamaño y forma.
+
+
+
+### Captura de imágenes
+
+Las hojas fueron fotografiadas en un fondo blanco, incluyendo una moneda como escala para convertir medidas en píxeles a unidades reales. Las imágenes se capturaron bajo iluminación uniforme para evitar sombras y facilitar la segmentación.
+
+
+
+### Procesamiento en Google Colab
+
+
+#### Carga de imágenes  
+
+
+#### Detección de escala  
+
+
+#### Extracción de rasgos morfológicos  
+
+
+#### Exportación de resultados
+
+
+
+
+## Referencias Bibliográficas
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
