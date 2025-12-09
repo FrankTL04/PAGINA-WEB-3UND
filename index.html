@@ -224,6 +224,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#fenotipado-vegetal" id="toc-fenotipado-vegetal" class="nav-link" data-scroll-target="#fenotipado-vegetal">Fenotipado Vegetal</a></li>
   <li><a href="#fenotipado-automatizado-mediante-análisis-de-imágenes" id="toc-fenotipado-automatizado-mediante-análisis-de-imágenes" class="nav-link" data-scroll-target="#fenotipado-automatizado-mediante-análisis-de-imágenes">Fenotipado automatizado mediante análisis de imágenes</a></li>
   <li><a href="#importancia-de-las-hojas-como-órgano-de-estudio" id="toc-importancia-de-las-hojas-como-órgano-de-estudio" class="nav-link" data-scroll-target="#importancia-de-las-hojas-como-órgano-de-estudio">Importancia de las hojas como órgano de estudio</a></li>
+  <li><a href="#qué-es-google-colab" id="toc-qué-es-google-colab" class="nav-link" data-scroll-target="#qué-es-google-colab">¿Qué es Google Colab?</a></li>
   </ul></li>
   <li><a href="#metodología" id="toc-metodología" class="nav-link" data-scroll-target="#metodología">Metodología</a>
   <ul class="collapse">
@@ -231,7 +232,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#captura-de-imágenes" id="toc-captura-de-imágenes" class="nav-link" data-scroll-target="#captura-de-imágenes">Captura de imágenes</a></li>
   <li><a href="#procesamiento-en-google-colab" id="toc-procesamiento-en-google-colab" class="nav-link" data-scroll-target="#procesamiento-en-google-colab">Procesamiento en Google Colab</a></li>
   </ul></li>
-  <li><a href="#referencias-bibliográficas" id="toc-referencias-bibliográficas" class="nav-link" data-scroll-target="#referencias-bibliográficas">Referencias Bibliográficas</a></li>
   </ul>
 </nav>
 </div>
@@ -246,7 +246,7 @@ ul.task-list li input[type="checkbox"] {
 <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-top:20px;">
 
   <div style="width:70%;">
-    <h1>FENOTIPADO DE HOJAS DE NÍSPERO <em>(Eriobotrya japonica)</em> CON SOFTWARE AUTOMATIZADO</h1>
+    <h1>FENOTIPADO DE HOJAS DE NÍSPERO <em>(Eriobotrya japonica)</em> MEDIANTE SOFTWARE AUTOMATIZADO EMPLEANDO IA</h1>
 
     <p><strong>Autores:</strong><br>
     Colunche Vasquez, Josue J.; Cubas Fernandez, Mikey D.; Delgado Gomez, Mark A;Ramos Briceños, Iván; Sánchez Alvarado, Rubén; Tomapasca López, Frank</p>
@@ -285,7 +285,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
 <li>Implementar un flujo de procesamiento digital utilizando Google Colab y librerías de visión computacional.<br>
 </li>
-<li>Segmentar las hojas y extraer características morfológicas clave como área, perímetro, longitud y ancho.<br>
+<li>Segmentar las hojas y extraer características morfológicas clave como área, longitud y ancho.<br>
 </li>
 <li>Evaluar la precisión y eficiencia del método automatizado frente a mediciones manuales o tradicionales.<br>
 </li>
@@ -317,7 +317,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="importancia-de-las-hojas-como-órgano-de-estudio" class="level3">
 <h3 class="anchored" data-anchor-id="importancia-de-las-hojas-como-órgano-de-estudio">Importancia de las hojas como órgano de estudio</h3>
-<p>Las hojas constituyen el principal sitio de fotosíntesis, intercambio gaseoso y regulación hídrica. La morfología foliar —como área, forma, margen y arquitectura de nervaduras— está estrechamente relacionada con procesos fisiológicos y con la adaptación de las plantas a condiciones ambientales específicas.</p>
+<p>Las hojas constituyen el principal sitio de fotosíntesis, intercambio gaseoso y regulación hídrica. La morfología foliar como área, forma, margen y arquitectura de nervaduras; está estrechamente relacionada con procesos fisiológicos y con la adaptación de las plantas a condiciones ambientales específicas.</p>
 <p>El estudio foliar permite inferir:</p>
 <ol type="1">
 <li>La eficiencia fotosintética<br>
@@ -331,6 +331,10 @@ ul.task-list li input[type="checkbox"] {
 <li>Variación intra e intervarietal</li>
 </ol>
 </section>
+<section id="qué-es-google-colab" class="level3">
+<h3 class="anchored" data-anchor-id="qué-es-google-colab">¿Qué es Google Colab?</h3>
+<p>Google Colaboratory, conocido popularmente como Google Colab, es una plataforma gratuita ofrecida por Google que proporciona un entorno de cuadernos Jupyter alojado en la nube. Permite escribir y ejecutar código en Python, así como visualizar los resultados directamente desde el navegador, sin necesidad de realizar configuraciones ni instalar software de manera local (Vieira, 2024).</p>
+</section>
 </section>
 <section id="metodología" class="level2">
 <h2 class="anchored" data-anchor-id="metodología">Metodología</h2>
@@ -341,25 +345,110 @@ ul.task-list li input[type="checkbox"] {
 <section id="captura-de-imágenes" class="level3">
 <h3 class="anchored" data-anchor-id="captura-de-imágenes">Captura de imágenes</h3>
 <p>Las hojas fueron fotografiadas en un fondo blanco, incluyendo una moneda como escala para convertir medidas en píxeles a unidades reales. Las imágenes se capturaron bajo iluminación uniforme para evitar sombras y facilitar la segmentación.</p>
+<div id="fig-imaje12" class="center quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-imaje12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/IMAJE_12.png" class="img-fluid figure-img" style="width:55.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-imaje12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1
+</figcaption>
+</figure>
+</div>
 </section>
 <section id="procesamiento-en-google-colab" class="level3">
-<h3 class="anchored" data-anchor-id="procesamiento-en-google-colab">Procesamiento en Google Colab</h3>
+<h3 class="anchored">Procesamiento en Google Colab</h3>
+<p>Para poder fenotipar las imágenes en Google Colab, se empleo un código basado en Phyton.</p>
 <section id="carga-de-imágenes" class="level4">
 <h4 class="anchored" data-anchor-id="carga-de-imágenes">Carga de imágenes</h4>
+<p>Google Colaab, permite la carga de varias imágenes a la misma vez, lo que facilita el trabajo del usuario.</p>
 </section>
 <section id="detección-de-escala" class="level4">
 <h4 class="anchored" data-anchor-id="detección-de-escala">Detección de escala</h4>
+<p>Gogle Colab identifica el objeto circular y calcula el número de píxeles que ocupa y lo compara con la medida proporcionada (25.5 mm)</p>
 </section>
 <section id="extracción-de-rasgos-morfológicos" class="level4">
-<h4 class="anchored" data-anchor-id="extracción-de-rasgos-morfológicos">Extracción de rasgos morfológicos</h4>
+<h4 class="anchored">Extracción de rasgos morfológicos</h4>
+<p>Google colab identifica el ancho y el largo del objeto a trabajar:</p>
+<div id="fig-imaje12" class="center quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-imaje12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/WhatsApp%20Image%202025-12-09%20at%2011.14.43%20AM%20(2).jpeg" class="img-fluid figure-img" style="width:75.0%"></p>
+<figcaption>Figura : Identificación del objeto</figcaption>
+</figure>
+</div>
+<section id="exportación-de-resultados" class="level4" style="text-align:justify;">
+<h4 class="anchored">Exportación de resultados</h4>
+<p>Una vez obtenido las medidas, se genera una vista previa de las imágenes y sus respectvas medidas.</p>
+<div id="fig-imaje12" class="center quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-imaje12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/WhatsApp%20Image%202025-12-09%20at%2011.14.42%20AM.jpeg" class="img-fluid figure-img" style="width:75.0%" data-ref-parent="fig-imaje12"></p>
+<figcaption>Hoja analizada</figcaption>
+</figure>
+</div>
+<div style="text-align:justify;">
+<p>Google Colab, genera una tabla con las unidades de medidas obtenidas, las cuales se exportaran automaticamente a un archivo excel.</p>
+<div id="fig-imaje12" class="center quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-imaje12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/WhatsApp%20Image%202025-12-09%20at%2011.14.42%20AM%20(1).jpeg" class="img-fluid figure-img" style="width:55.0%" data-ref-parent="fig-imaje12"></p>
+<figcaption>Hoja analizada</figcaption>
+</figure>
+</div>
+<div style="text-align:justify;">
+<p>Hoja de cálculo generada en formato excel; conteniendo las medidas obtenidas.</p>
+<div id="fig-imaje12" class="center quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-imaje12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/WhatsApp%20Image%202025-12-09%20at%2010.44.48%20AM.jpeg" class="img-fluid figure-img" style="width:55.0%" data-ref-parent="fig-imaje12">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-imaje12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a)
+</figcaption>
+</figure>
+</div>
+<div style="text-align:justify;">
+<section id="conclusiones" class="level2">
+<h2 class="anchored" data-anchor-id="conclusiones">Conclusiones</h2>
 </section>
-<section id="exportación-de-resultados" class="level4">
-<h4 class="anchored" data-anchor-id="exportación-de-resultados">Exportación de resultados</h4>
-</section>
-</section>
+<section id="recomendaciones" class="level2">
+<h2 class="anchored" data-anchor-id="recomendaciones">Recomendaciones</h2>
+<p>Para evitar complicaciones al realizar el fenotipado de imágenes mediante inteligencia artificial utilizando Google Colab, es fundamental asegurarse de que las imágenes estén bien definidas y con buena resolución. Además, es importante que la escala de referencia (por ejemplo, una regla o moneda) se encuentre siempre en el mismo plano de trabajo que el objeto a analizar, para garantizar mediciones precisas y consistentes. También se recomienda mantener un formato de imagen uniforme y libre de distorsiones que puedan afectar el análisis automatizado.</p>
 </section>
 <section id="referencias-bibliográficas" class="level2">
 <h2 class="anchored" data-anchor-id="referencias-bibliográficas">Referencias Bibliográficas</h2>
+</section>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-imaje12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b)
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-imaje12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(c)
+</figcaption>
+</figure>
+</div>
+</section>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig quarto-uncaptioned" id="fig-imaje12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
 </section>
 
 </main>

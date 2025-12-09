@@ -16,7 +16,7 @@ format:
 <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-top:20px;">
 
   <div style="width:70%;">
-    <h1>FENOTIPADO DE HOJAS DE NÍSPERO <em>(Eriobotrya japonica)</em> CON SOFTWARE AUTOMATIZADO</h1>
+    <h1>FENOTIPADO DE HOJAS DE NÍSPERO <em>(Eriobotrya japonica)</em> MEDIANTE SOFTWARE AUTOMATIZADO EMPLEANDO IA</h1>
 
     <p><strong>Autores:</strong><br>
     Colunche Vasquez, Josue J.; Cubas Fernandez, Mikey D.; Delgado Gomez, Mark A;Ramos Briceños, Iván; Sánchez Alvarado, Rubén; Tomapasca López, Frank</p>
@@ -67,7 +67,7 @@ Realizar el fenotipado automatizado de hojas de níspero (*Eriobotrya japonica*)
 
 1. Capturar y estandarizar imágenes de hojas de níspero empleando una escala de referencia para el cálculo de medidas reales.  
 2. Implementar un flujo de procesamiento digital utilizando Google Colab y librerías de visión computacional.  
-3. Segmentar las hojas y extraer características morfológicas clave como área, perímetro, longitud y ancho.  
+3. Segmentar las hojas y extraer características morfológicas clave como área, longitud y ancho.  
 4. Evaluar la precisión y eficiencia del método automatizado frente a mediciones manuales o tradicionales.  
 5. Generar un conjunto de datos morfométricos que pueda emplearse en estudios posteriores de variabilidad, selección o caracterización agronómica.
 
@@ -100,7 +100,7 @@ Herramientas como Python, OpenCV y plataformas como Google Colab han hecho acces
 
 ### Importancia de las hojas como órgano de estudio
 
-Las hojas constituyen el principal sitio de fotosíntesis, intercambio gaseoso y regulación hídrica. La morfología foliar —como área, forma, margen y arquitectura de nervaduras— está estrechamente relacionada con procesos fisiológicos y con la adaptación de las plantas a condiciones ambientales específicas.
+Las hojas constituyen el principal sitio de fotosíntesis, intercambio gaseoso y regulación hídrica. La morfología foliar como área, forma, margen y arquitectura de nervaduras; está estrechamente relacionada con procesos fisiológicos y con la adaptación de las plantas a condiciones ambientales específicas.
 
 El estudio foliar permite inferir:
 
@@ -110,6 +110,8 @@ El estudio foliar permite inferir:
 4. Características genéticas asociadas a productividad  
 5. Variación intra e intervarietal  
 
+### ¿Qué es Google Colab?
+Google Colaboratory, conocido popularmente como Google Colab, es una plataforma gratuita ofrecida por Google que proporciona un entorno de cuadernos Jupyter alojado en la nube. Permite escribir y ejecutar código en Python, así como visualizar los resultados directamente desde el navegador, sin necesidad de realizar configuraciones ni instalar software de manera local (Vieira, 2024).
 
 
 ## Metodología
@@ -124,24 +126,67 @@ Se recolectaron hojas de níspero (*Eriobotrya japonica*) provenientes de planta
 
 Las hojas fueron fotografiadas en un fondo blanco, incluyendo una moneda como escala para convertir medidas en píxeles a unidades reales. Las imágenes se capturaron bajo iluminación uniforme para evitar sombras y facilitar la segmentación.
 
+::: {#fig-imaje12 .center}
+![Hoja analizada](images/IMAJE_12.png){width="55%"}
+Figura 1. Imagen analizada.
+:::
+
+
 
 
 ### Procesamiento en Google Colab
+Para poder fenotipar las imágenes en Google Colab, se empleo un código basado en Phyton.
+
+
+
+
 
 
 #### Carga de imágenes  
+Google Colaab, permite la carga de varias imágenes a la misma vez, lo que facilita el trabajo del usuario.
 
 
 #### Detección de escala  
+Gogle Colab identifica el objeto circular y calcula el número de píxeles que ocupa y lo compara con la medida proporcionada (25.5 mm)
+
 
 
 #### Extracción de rasgos morfológicos  
+Google colab identifica el ancho y el largo del objeto a trabajar:
 
+::: {#fig-imaje12 .center}
+![Figura : Identificación del objeto](images/WhatsApp Image 2025-12-09 at 11.14.43 AM (2).jpeg){width="75%"}
 
+<div style="text-align:justify;">
 #### Exportación de resultados
+Una vez obtenido las medidas, se genera una vista previa de las imágenes y sus respectvas medidas.
+
+::: {#fig-imaje12 .center}
+![Hoja analizada](images/WhatsApp Image 2025-12-09 at 11.14.42 AM.jpeg){width="75%"}
+<div style="text-align:justify;">
+
+Google Colab, genera una tabla con las unidades de medidas obtenidas, las cuales se exportaran automaticamente a un archivo excel. 
+
+::: {#fig-imaje12 .center}
+![Hoja analizada](images/WhatsApp Image 2025-12-09 at 11.14.42 AM (1).jpeg){width="55%"}
 
 
+<div style="text-align:justify;">
 
+Hoja de cálculo generada en formato excel; conteniendo las medidas obtenidas.
+
+::: {#fig-imaje12 .center}
+![Hoja analizada](images/WhatsApp Image 2025-12-09 at 10.44.48 AM.jpeg){width="55%"}
+Figura 1. Tabla de resultados.
+:::
+
+<div style="text-align:justify;">
+
+## Conclusiones
+
+
+## Recomendaciones
+Para evitar complicaciones al realizar el fenotipado de imágenes mediante inteligencia artificial utilizando Google Colab, es fundamental asegurarse de que las imágenes estén bien definidas y con buena resolución. Además, es importante que la escala de referencia (por ejemplo, una regla o moneda) se encuentre siempre en el mismo plano de trabajo que el objeto a analizar, para garantizar mediciones precisas y consistentes. También se recomienda mantener un formato de imagen uniforme y libre de distorsiones que puedan afectar el análisis automatizado.
 
 ## Referencias Bibliográficas
 
